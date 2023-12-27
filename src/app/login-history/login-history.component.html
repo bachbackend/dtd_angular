@@ -1,0 +1,30 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Login History</title>
+</head>
+<body>
+  <h1>Login History</h1>
+  <!-- <a routerLink="/home">Back to Home</a> -->
+  <input class="bach" type="text" [(ngModel)]="searchText" id="filterInput" placeholder="Search by account name" (input)="search()">
+  <table id="loginHistoryTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Account ID</th>
+        <th>Account name</th>
+        <th>Login time</th>
+      </tr>
+    </thead>
+    <tbody id="loginHistoryTableBody">
+      <tr *ngFor="let history of loginHistories | paginate: { itemsPerPage: 10, currentPage: p, totalItems: loginHistories.length }">
+        <td>{{ history.id }}</td>
+        <td>{{ history.account.id }}</td>
+        <td>{{ history.account.username }}</td>
+        <td>{{ history.loginDate | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <a routerLink="/home">Back to Home</a>
+  
+</body>

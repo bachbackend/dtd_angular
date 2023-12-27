@@ -1,0 +1,45 @@
+
+<head>
+  <meta charset="UTF-8">
+  <title>Transaction History</title>
+</head>
+
+<body>
+  <h1>Transaction History</h1>
+  <div id="filterContainer">
+    <input type="number" [(ngModel)]="searchText1" id="filterInput" placeholder="Search by Person ID" (input)="searchById()">
+    <input type="text" [(ngModel)]="searchText2" id="descriptionSearch" placeholder="Search by description" (input)="searchByDes()">
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Person ID</th>
+        <th>Transaction Date</th>
+        <th>Transaction Type</th>
+        <th>Transaction Amount</th>
+        <th>Name</th>
+        <th>Balance Change</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="transactionHistoryTableBody">
+      <tr *ngFor="let transaction of transactionHistories | paginate: { itemsPerPage: 10, currentPage: p, totalItems: transactionHistories.length }">  
+        <td>{{ transaction.id }}</td>
+        <td>{{ transaction.person.id }}</td>
+        <td>{{ transaction.transactionDate | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+        <td [ngClass]="transaction.transactionType === 'ADD' ? 'add' : 'pay'">{{ transaction.transactionType }}</td>
+        <td>{{ transaction.transactionAmount | currency: 'VND': 'symbol':'1.0-0'}}</td>
+        <td>{{ transaction.person.name }}</td>
+        <td>{{ transaction.subTotal | currency: 'VND': 'symbol':'1.0-0'}}</td>
+        <td>{{ transaction.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  <a routerLink="/home">Back to Home</a>
+</body>
+
+

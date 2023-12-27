@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="inner-from">
+        <form id="loginForm" (ngSubmit)="onClickLogin()">
+            <h1>Login</h1>
+            <div class="inner-imput">
+                <label for="userName">Username:</label>
+                <input type="text" name="userName" [(ngModel)]="authRequest.userName" required>
+            </div>
+            <div class="inner-imput">
+                <label for="password">Password:</label>
+                <input type="password" name="password" [(ngModel)]="authRequest.password" required>
+            </div>
+            <div>
+                <button type="submit" class="inner-button">Login</button>
+            </div>
+            <a routerLink="/change-password">Change password</a>
+            <a routerLink="/register">Click here to register an account</a>
+        </form>
+    </div>
+</body>
+

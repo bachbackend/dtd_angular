@@ -1,0 +1,63 @@
+<head>
+    <meta charset="UTF-8">
+    <title>All Users - TMGDTD Finance</title>
+</head>
+
+<body>
+    <h1>All Users</h1>
+
+    <div class="search-container">
+        <div id="filterContainer">
+            <input class="bach" type="text" [(ngModel)]="searchText" id="filterInput" placeholder="Search by name" (input)="search()">
+        </div>
+        <button type="button" (click)="getUsersWithNegativeBalance()">Person with negative balance</button>
+        <button type="button" (click)="loadData()">Back to List</button>
+    </div>
+    <p *ngIf="totalMoney !== undefined">Tổng số tiền của công ty: <span id="totalMoney" [ngClass]="{'positive': totalMoney >= 0, 'negative': totalMoney < 0}">{{ totalMoney | currency: 'VND' }}</span></p>
+
+    <table id="getAllUserTable">
+        <thead>
+            <tr>
+                <th>ID <button (click)="sortData('ascId')">↑</button> <button (click)="sortData('descId')">↓</button>
+                </th>
+
+                <th>Name <button (click)="sortData('ascName')">↑</button> <button
+                    (click)="sortData('descName')">↓</button></th>
+                
+                <th>Date of Birth <button (click)="sortData('ascDob')">↑</button> <button
+                    (click)="sortData('descDob')">↓</button></th>
+                
+                <th>Email <button (click)="sortData('ascEmail')">↑</button> <button
+                    (click)="sortData('descEmail')">↓</button></th>
+                
+                <th>Phone Number <button (click)="sortData('ascPhone')">↑</button> <button
+                    (click)="sortData('descPhone')">↓</button></th>
+                
+                <th>Total Money <button (click)="sortData('ascMoney')">↑</button> <button
+                    (click)="sortData('descMoney')">↓</button></th>
+                
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: p, totalItems: users.length }">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.dob | date: 'dd/MM/yyyy' }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phoneNumber }}</td>
+                <td [class.positive-total]="isPositive(user.totalMoney)" [class.negative-total]="!isPositive(user.totalMoney)">
+                    {{ user.totalMoney | currency: 'VND': 'symbol':'1.0-0' }}
+                  </td>
+                <td>
+                    <button [routerLink]="['/update-person', user.id]">Update</button> |
+                    <button class="delete-button" (click)="deleteUser(user.id)">Delete</button> |
+                    <button [routerLink]="['/person-detail', user.id]">View</button> |
+                    <button [routerLink]="['/TransactionHistoryById', user.id]">Transaction history by ID</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <a routerLink="/home">Back to Home</a>
+</body>

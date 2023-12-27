@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+</head>
+
+<body>
+<h1>Transaction History</h1>
+
+    <table id="loginHistoryTable">
+        <thead>
+          <tr>
+            <th>Person ID</th>
+            <th>Person Name</th>
+            <th>Transaction ID</th>
+            <th>Transaction Date</th>
+            <th>Transaction Amount</th>
+            <th>Balance Change</th>
+            <th>Transaction Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody id="loginHistoryTableBody">
+          <tr *ngFor="let tranById of transactionHistories | paginate: { itemsPerPage: 10, currentPage: p, totalItems: transactionHistories.length }">
+            <td>{{ tranById.person.id }}</td>
+            <td>{{ tranById.person.name }}</td>
+            <td>{{ tranById.id }}</td>
+            <td>{{ tranById.transactionDate | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+            <td>{{ tranById.transactionAmount | currency: 'VND': 'symbol':'1.0-0' }}</td>
+            <td>{{ tranById.subTotal | currency: 'VND': 'symbol':'1.0-0' }}</td>
+            <td [class]="getTransactionTypeClass(tranById.transactionType)">
+              {{ tranById.transactionType }}
+          </td>
+            <td>{{ tranById.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    <button type="button" routerLink="/get-all-person">Back to List</button>
+</body>

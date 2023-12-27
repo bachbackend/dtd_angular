@@ -1,0 +1,27 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page - TMGDTD Finance</title>
+</head>
+
+<body class="main-background">
+  <div class="finance-section">
+    <img class="rotate-image" src="https://static.wixstatic.com/media/c857c4_7f4a51d661ac4f2aafd03d810678e23e~mv2.png/v1/fill/w_211,h_149,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/TMG%20logo-01.png" alt="Rotating Image">
+    <h1>Welcome to TMGDTD</h1>
+    <div id="menu-items">
+      <a routerLink="/add-person">Thêm người dùng</a>
+      <a routerLink="/get-all-person">Danh sách tất cả người dùng</a>
+      <a routerLink="/login-history">Lịch sử đăng nhập</a>
+      <a routerLink="/calculate">Tính toán tiền</a>
+      <a routerLink="/login-infor">Thông tin tài khoản</a>
+      <a routerLink="/transaction-history">Lịch sử giao dịch</a>
+      <a routerLink="/update-history">Lịch sử thay đổi thông tin</a>
+      <a href="https://wheelofnames.com/vi/" target="_blank" style="display: inline-block;">
+        TRƯA NAY ĂN MÓN GÌ ???
+      </a>
+    </div>
+    <div class="form-wrapper">
+      <p>Powered By Bách Lê</p>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+</body>

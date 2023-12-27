@@ -1,0 +1,18 @@
+<form [formGroup]="transactionForm" (ngSubmit)="processTransaction()">
+  <label>Số tiền tổng cộng:</label>
+  <input type="number" formControlName="totalAmount" />
+
+  <label>Id Người dùng được chọn:</label>
+  <input type="text" formControlName="selectedUserIds" />
+
+  <label>Số tiền cá nhân:</label>
+  <input type="text" formControlName="individualAmounts" />
+
+  <label>Loại Giao dịch:</label>
+  <input type="text" formControlName="transactionType" />
+
+  <label>Mô tả:</label>
+  <input type="text" formControlName="description" />
+
+  <button type="submit">Xử lý Giao dịch</button>
+</form>

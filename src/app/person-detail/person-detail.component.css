@@ -1,0 +1,64 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .user-detail {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .user-detail p {
+    margin: 10px 0;
+  }
+
+  .user-detail span {
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  a.back-to-list {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  a.back-to-list:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Canh giữa nút trong trang */
+  .container {
+    text-align: center;
+    margin-top: 20px; /* Có thể điều chỉnh khoảng cách trên theo nhu cầu của bạn */
+  }
+  

@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+
+<body>
+
+
+    <div class="inner-from">
+        <form id="registerForm" (ngSubmit)="onClickRegister()">
+            <h1>Register</h1>
+            <div class="inner-imput">
+                <label for="userName">Username:</label>
+                <input type="text" name="userName" [(ngModel)]="authRequest.userName" required>
+            </div>
+            <div class="inner-imput">
+                <label for="password">Password:</label>
+                <input type="password" name="password" [(ngModel)]="authRequest.password" required>
+            </div>
+            <div class="inner-imput">
+                <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" name="confirmPassword" [(ngModel)]="authRequest.confirmPassword" required>
+            </div>
+            <div>
+                <button type="submit" class="inner-button">Register</button>
+            </div>
+            <a routerLink="">Back to login</a>
+            <p id="message"></p>
+        </form>
+    </div>
+</body>

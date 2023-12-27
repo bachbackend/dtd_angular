@@ -1,0 +1,42 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Calculate Money</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Calculate Money</h1>
+    <form id="personForm" (ngSubmit)="onSubmit()" >
+      <label>Total Amount:</label>
+      <input type="number" step="0.01" name="totalAmount" placeholder="VNĐ" [(ngModel)]="cal.totalAmount" required />
+      <span id="vndText"></span>
+
+      <h1>Select Users</h1>
+
+      <input class="bach" type="button" value="Chọn tất cả" id="selectAllUsers" (click)="selectAllUsers()" />
+      
+      <div id="selectedUserIds" class="user-select-container">
+        <div *ngFor="let per of persons">
+          <label>
+            <input type="checkbox" [(ngModel)]="per.isSelected" name="userCheckbox" (change)="onCheckboxChange(per)" />
+            {{ per.name }}
+          </label> 
+        </div>
+      </div>
+
+      <label>Transaction Type:</label>
+      <select name="transactionType" [(ngModel)]="cal.transactionType">
+        <option value="subtract_avg">Trừ tiền(chia trung bình)</option>
+        <option value="add_avg">Cộng tiền(chia trung bình)</option>
+        <option value="subtract_individual">Trừ tiền(Trừ nguyên số tiền nhập vào)</option>
+        <option value="add_individual">Cộng tiền(Cộng nguyên số tiền nhập vào)</option>
+      </select>
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" required [(ngModel)]="cal.description">
+
+      <input type="submit" value="Submit" />
+    </form>
+    <a routerLink="/calculate">Back to Calculate</a>
+  </div>
+</body>

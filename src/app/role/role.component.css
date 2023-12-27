@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    display: contents;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 50;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    width: 200px;
+    padding: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(59, 208, 183);
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+}
+a:hover {
+    background-color: rgb(59, 208, 183);
+  }
+
+  a {
+    /* display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s; */
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  a.back-to-list:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Canh giữa nút trong trang */
+  .container {
+    text-align: center;
+    margin-top: 20px; /* Có thể điều chỉnh khoảng cách trên theo nhu cầu của bạn */
+  }

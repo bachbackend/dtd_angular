@@ -1,0 +1,240 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px 0;
+  color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.1);
+  /* Thay đổi màu xanh lá (#4CAF50) thành màu xanh dương (rgba(0, 0, 255, 0.1)) */
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+
+  border-bottom: 1px solid #ddd;
+  /* Đường kẻ đen giữa các hàng */
+  border-right: 1px solid #ddd;
+  /* Đường kẻ đen giữa các cột */
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+  transition: background-color 0.3s ease;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+th {
+  background-color: #0074D9;
+  color: white;
+}
+
+a {
+  display: block;
+  text-align: center;
+  color: #0074D9;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+a:hover {
+  color: #0056b3;
+  transition: color 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  a {
+    font-size: 16px;
+  }
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(59, 208, 183);
+}
+
+.bach {
+  padding: 5px;
+  border: 1px solid #0074d9;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.delete-button {
+  font-weight: bold;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  /* Kích thước nút và phông chữ trong nút */
+}
+
+.delete-button:hover {
+  background-color: red;
+  color: white;
+}
+
+a:hover {
+  background-color: rgb(59, 208, 183);
+}
+
+a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.container {
+  text-align: center;
+  margin-top: 20px;
+  /* Có thể điều chỉnh khoảng cách trên theo nhu cầu của bạn */
+}
+
+/* Áp dụng một số kiểu chung cho label và select */
+label,
+select {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Tùy chỉnh kiểu của select box */
+select {
+  width: 25%; /* Thay đổi giá trị này tùy thuộc vào nhu cầu của bạn */
+  padding: 5px; /* Giảm padding để làm cho select nhỏ hơn */
+  border: 1px solid #ccc;
+  border-radius: 3px; /* Giảm độ cong của góc */
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Tạo hiệu ứng hover cho select box */
+select:hover {
+  border-color: #888;
+}
+
+/* Hiệu ứng focus cho select box */
+select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(81, 203, 238, 0.7);
+}
+
+/* Tạo hiệu ứng hover cho label */
+label:hover {
+  color: #4CAF50;
+}
+
+
+
+
+
+/* Định dạng chung cho form */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Định dạng cho nhãn label */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Định dạng cho select */
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Hiệu ứng hover cho select */
+select:hover {
+  border-color: #555;
+}
+
+/* Hiệu ứng focus cho select */
+select:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}
+
+/* Định dạng cho button */
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hiệu ứng hover cho button */
+button:hover {
+  background-color: #45a049;
+}
+
+button.delete-button {
+  background-color: #dc3545; /* Màu đỏ */
+  color: #fff; /* Màu chữ trắng */
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hiệu ứng hover cho nút Delete */
+button.delete-button:hover {
+  background-color: #c82333; /* Màu đỏ tối hơn khi hover */
+}
